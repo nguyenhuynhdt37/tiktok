@@ -1,0 +1,85 @@
+@import '../../../GlobalStyle/variables.scss';
+$search-radius: 80px;
+$width-btn-search: 5rem;
+$height-box-search: 4.5rem;
+$width-box-search: 45rem;
+.wrap {
+  height: 60px;
+  width: 100%;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+  display: flex;
+  justify-content: center;
+}
+.container {
+  width: 1392px;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.box-logo {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.box-show-search,
+.search {
+  width: $width-box-search;
+}
+.search {
+  position: relative;
+  border-radius: $search-radius;
+  height: $height-box-search;
+  padding-left: 1.4rem;
+  background-color: $search-backgroud;
+  display: flex;
+  justify-content: space-between;
+  border: 1.5px solid transparent;
+  &:focus-within,
+  &:hover {
+    border-color: #c5c6c9;
+  }
+  &:hover .btn-search {
+    background-color: #e4e2e2;
+    color: #5b5b5b;
+  }
+  &::after {
+    position: absolute;
+    content: '';
+    width: 0.1rem;
+    height: calc($height-box-search - 2rem);
+    background-color: $text-color;
+    right: $width-btn-search;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+.box-search {
+  display: flex;
+  align-items: center;
+}
+.input-search {
+  height: 100%;
+  background-color: transparent;
+  font-size: 1.4rem;
+  caret-color: $primary;
+  &:focus-visible ~ .btn-search {
+    color: #5b5b5b;
+  }
+}
+.btn-search {
+  width: $width-btn-search;
+  font-size: 2rem;
+  color: $text-color;
+  border-top-right-radius: $search-radius;
+  border-bottom-right-radius: $search-radius;
+}
+.loadding,
+.btn-remove {
+  position: absolute;
+  top: 50%;
+  right: calc($width-btn-search + 1.3rem);
+  transform: translateY(-50%);
+  font-size: 1.3rem;
+  color: #898989;
+  padding: 0;
+}
